@@ -11,9 +11,9 @@ public class BeeScript : MonoBehaviour
     public GameObject button;
     void Update()
     {
-        angle += Time.deltaTime;
-        var x = Mathf.Cos (angle * speed) * radius;
-        var y = Mathf.Sin (angle * speed) * radius;
+        angle += Time.deltaTime * speed;
+        var x = Mathf.Cos (angle) * radius;
+        var y = Mathf.Sin (angle) * radius;
         var transform1 = transform;
         transform1.position = new Vector2(x, y);
         transform1.eulerAngles = Vector3.forward * (angle * 100);

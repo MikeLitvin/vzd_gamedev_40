@@ -17,6 +17,7 @@ public class ButtonTapScript : MonoBehaviour
     private bool _isMouseOnButton;
     public bool _isTriggerEntered;
     private int _hp = 3;
+    private int _points = 0; 
     public GameObject prefabSpawner;
     
     void Start()
@@ -47,7 +48,8 @@ public class ButtonTapScript : MonoBehaviour
             }
             PaintPetal();
             _isTriggerEntered = false;
-            bee.GetComponent<BeeScript>().speed += 0.05f;
+            bee.GetComponent<BeeScript>().speed *= 1.05f;
+            _points++;
         }
         else if (_isMouseOnButton && !_isTriggerEntered && _hp > 0)
         {
